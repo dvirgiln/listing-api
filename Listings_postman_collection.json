@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "5142a1f2-d900-4327-8246-06deca806525",
+		"name": "Listings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "EAN-CID",
+						"value": "502772"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/listings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post listing",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"listing\": {\n    \"contact\": {\n      \"phone\": \"15126841100\",\n      \"formattedPhone\": \"+1 512-684-1100\"\n    },\n    \"address\": {\n      \"address\": \"1011 W 5th St\",\n      \"postalCode\": \"1011\",\n      \"countryCode\": \"US\",\n      \"city\": \"Austin\",\n      \"state\": \"TX\",\n      \"country\": \"United States\"\n    },\n    \"location\": {\n      \"lat\": \"40.4255485534668\",\n      \"lng\": \"-3.7075681686401367\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/listings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get listing",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"listing\": {\n    \"contact\": {\n      \"phone\": \"15126841100\",\n      \"formattedPhone\": \"+1 512-684-1100\"\n    },\n    \"address\": {\n      \"address\": \"1011 W 5th St\",\n      \"postalCode\": \"1011\",\n      \"countryCode\": \"US\",\n      \"city\": \"Austin\",\n      \"state\": \"TX\",\n      \"country\": \"United States\"\n    },\n    \"location\": {\n      \"lat\": \"40.4255485534668\",\n      \"lng\": \"-3.7075681686401367\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/listings/faf49a32-0ff2-482e-8857-944faee4f281",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listings",
+						"faf49a32-0ff2-482e-8857-944faee4f281"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Listing",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"listing\": {\n    \"contact\": {\n      \"phone\": \"15126841100\",\n      \"formattedPhone\": \"+1 512-684-1100\"\n    },\n    \"address\": {\n      \"address\": \"1011 W 5th St\",\n      \"postalCode\": \"1011\",\n      \"countryCode\": \"US\",\n      \"city\": \"Austin\",\n      \"state\": \"TX\",\n      \"country\": \"United States\"\n    },\n    \"location\": {\n      \"lat\": \"40.4255485534668\",\n      \"lng\": \"-3.7075681686401367\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/listings/faf49a32-0ff2-482e-8857-944faee4f281",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listings",
+						"faf49a32-0ff2-482e-8857-944faee4f281"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Incorrect listing",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"listing\": {\n    \"contact\": {\n      \"phone\": \"A15126841100\",\n      \"formattedPhone\": \"+1 512-684-1100\"\n    },\n    \"address\": {\n      \"address\": \"1011 W 5th St\",\n      \"postalCode\": \"1011\",\n      \"countryCode\": \"USA\",\n      \"city\": \"Austin\",\n      \"state\": \"TX\",\n      \"country\": \"United States\"\n    },\n    \"location\": {\n      \"lat\": \"A40.4255485534668\",\n      \"lng\": \"-3.7075681686401367\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/listings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Incorrect. Required State",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"listing\": {\n    \"contact\": {\n      \"phone\": \"A15126841100\",\n      \"formattedPhone\": \"+1 512-684-1100\"\n    },\n    \"address\": {\n      \"address\": \"1011 W 5th St\",\n      \"postalCode\": \"1011\",\n      \"countryCode\": \"US\",\n      \"city\": \"Austin\",\n      \"country\": \"United States\"\n    },\n    \"location\": {\n      \"lat\": \"A40.4255485534668\",\n      \"lng\": \"-3.7075681686401367\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/listings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Incorrect. Non Required State. Non US",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"listing\": {\n    \"contact\": {\n      \"phone\": \"A15126841100\",\n      \"formattedPhone\": \"+1 512-684-1100\"\n    },\n    \"address\": {\n      \"address\": \"1011 W 5th St\",\n      \"postalCode\": \"1011\",\n      \"countryCode\": \"ES\",\n      \"city\": \"Austin\",\n      \"state\": \"TX\",\n      \"country\": \"United States\"\n    },\n    \"location\": {\n      \"lat\": \"A40.4255485534668\",\n      \"lng\": \"-3.7075681686401367\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/listings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Incorrect. Empy City",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"listing\": {\n    \"contact\": {\n      \"phone\": \"15126841100\",\n      \"formattedPhone\": \"+1 512-684-1100\"\n    },\n    \"address\": {\n      \"address\": \"1011 W 5th St\",\n      \"postalCode\": \"1011\",\n      \"countryCode\": \"ES\",\n      \"city\": \"\",\n      \"country\": \"United States\"\n    },\n    \"location\": {\n      \"lat\": \"40.4255485534668\",\n      \"lng\": \"-3.7075681686401367\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/listings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Incorrect. Multiple Errors",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"myid\",\n  \"listing\": {\n    \"contact\": {\n      \"phone\": \"A15126841100\",\n      \"formattedPhone\": \"+1 512-684-1100\"\n    },\n    \"address\": {\n      \"address\": \"1011 W 5th St\",\n      \"postalCode\": \"1011\",\n      \"countryCode\": \"US\",\n      \"city\": \"\",\n      \"country\": \"\"\n    },\n    \"location\": {\n      \"lat\": \"A40.4255485534668\",\n      \"lng\": \"-3.7075681686401367\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/listings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
